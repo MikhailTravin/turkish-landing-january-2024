@@ -1,0 +1,79 @@
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 50;
+	padding: 50px 0px 50px 0px;
+	@media (max-width: $mobile) {
+		padding: 20px 0px 10px 0px;
+	}
+	// .header__content
+	&__content {
+		position: relative;
+	}
+	// .header__container
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	// .header__logo
+	&__logo {
+		position: relative;
+		@media (max-width: $mobile) {
+			img {
+				width: auto;
+				height: 29px;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				top: -23px;
+				left: -27px;
+				width: 168px;
+				height: 72px;
+				z-index: -1;
+				background: rgba(9, 6, 6, 0.8);
+				filter: blur(12.5px);
+			}
+		}
+	}
+	// .header__whatsapp
+	&__whatsapp {
+		display: flex;
+		align-items: center;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -10px;
+			left: -21px;
+			width: calc(100% + 42px);
+			height: calc(100% + 20px);
+			z-index: -1;
+			background: rgba(9, 6, 6, 0.8);
+			filter: blur(12.5px);
+		}
+		@media (max-width: $mobile) {
+			display: none;
+		}
+	}
+	// .header__icon
+	&__icon {
+		width: 32px;
+		height: 32px;
+		display: block;
+		margin: 0px 10px 0px 0px;
+		background: url("../img/icons/whatsapp.svg") 0 0 no-repeat;
+	}
+	// .header__tel
+	&__tel {
+		font-family: "Calibri";
+		font-weight: 700;
+		font-size: 16px;
+		line-height: math.div(26, 16);
+		letter-spacing: 0.08px;
+		color: #fff;
+	}
+}
